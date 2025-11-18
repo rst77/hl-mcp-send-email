@@ -1,76 +1,76 @@
 # MCP Send Email - Helidon MCP Server Example
 
-## Descrição
+## Description
 
-Este é um projeto de exemplo de **MCP (Model Context Protocol) Server** construído com o framework [Helidon](https://helidon.io/). 
+This is an example **MCP (Model Context Protocol) Server** project built with the [Helidon](https://helidon.io/) framework.
 
-O projeto implementa um servidor MCP básico que fornece uma ferramenta (tool) simples para simulação de envio de emails, demonstrando como criar servidores MCP usando Java e Helidon.
+The project implements a basic MCP server that provides a simple tool for simulating email sending, demonstrating how to create MCP servers using Java and Helidon.
 
-## Objetivo
+## Purpose
 
-Este projeto faz parte de uma série de exemplos com **complexidade crescente** desenvolvidos para estudo de **Java associado a LLM (Large Language Models)**. O objetivo é fornecer uma base prática para entender como construir servidores MCP que podem ser utilizados por agentes de IA e assistentes baseados em LLM.
+This project is part of a series of examples with **increasing complexity** developed for studying **Java in conjunction with LLM (Large Language Models)**. The goal is to provide a practical foundation for understanding how to build MCP servers that can be used by AI agents and LLM-based assistants.
 
-## Tecnologias
+## Technologies
 
 - **Java** (JDK 17+)
 - **Helidon 4.3.1** (Helidon SE)
 - **MCP (Model Context Protocol)**
-- **Maven** (gerenciamento de dependências e build)
+- **Maven** (dependency management and build)
 
-## Estrutura do Projeto
+## Project Structure
 
-O projeto contém:
+The project contains:
 
-- **McpServer.java**: Implementação do servidor MCP com:
-  - `sendEmail`: Tool para envio simulado de emails
-  - `sendEmailPrompt`: Prompt exemplo para interação com LLM
+- **McpServer.java**: MCP server implementation with:
+  - `sendEmail`: Tool for simulated email sending
+  - `sendEmailPrompt`: Example prompt for LLM interaction
   
-- **Main.java**: Classe principal que inicializa o servidor
+- **Main.java**: Main class that initializes the server
 
-## Funcionalidades
+## Features
 
 ### Tool: Send Email
 
-Ferramenta que simula o envio de um email com os seguintes parâmetros:
-- `from`: Endereço de email do remetente
-- `to`: Endereço(s) de email do(s) destinatário(s)
-- `subject`: Assunto do email
-- `body`: Corpo do email
+Tool that simulates sending an email with the following parameters:
+- `from`: Sender's email address
+- `to`: Recipient's email address(es)
+- `subject`: Email subject
+- `body`: Email body
 
 ### Prompt: Send Email Prompt
 
-Prompt de exemplo que demonstra como estruturar uma solicitação de envio de email para ser utilizada por um LLM.
+Example prompt demonstrating how to structure an email sending request for use by an LLM.
 
-## Como Executar
+## How to Run
 
-### Pré-requisitos
+### Prerequisites
 
-- Java JDK 17 ou superior
+- Java JDK 17 or higher
 - Maven 3.8+
 
-### Compilar
+### Build
 
 ```bash
 mvn clean package
 ```
 
-### Executar
+### Run
 
 ```bash
 mvn exec:java -Dexec.mainClass="com.r13a.mcp.sendemail.Main"
 ```
 
-Ou executar o JAR gerado:
+Or run the generated JAR:
 
 ```bash
 java -jar target/mcp-send-email.jar
 ```
 
-O servidor será iniciado na porta **8080** (configurável em `application.yaml`).
+The server will start on port **8080** (configurable in `application.yaml`).
 
-## Configuração
+## Configuration
 
-A configuração do servidor pode ser ajustada no arquivo `src/main/resources/application.yaml`:
+Server configuration can be adjusted in the `src/main/resources/application.yaml` file:
 
 ```yaml
 server:
@@ -78,22 +78,26 @@ server:
   host: 0.0.0.0
 ```
 
-## Próximos Passos
+## Next Steps
 
-Este é o projeto inicial da série. Projetos subsequentes incluirão:
+This is the initial project in the series. Subsequent projects will include:
 
-- Integração com APIs reais de envio de email
-- Autenticação e autorização
-- Persistência de dados
-- Ferramentas MCP mais complexas
-- Integração com múltiplos serviços
+- Integration with real email sending APIs
+- Authentication and authorization
+- Data persistence
+- More complex MCP tools
+- Integration with multiple services
 
-## Recursos
+## Resources
 
 - [Helidon Documentation](https://helidon.io/docs/latest/)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 
-## Licença
+## License
 
-Este é um projeto de exemplo para fins educacionais.
+This is a sample project for educational purposes.
+
+## Author
+
+Developed as part of a series of studies on Java and LLM.
