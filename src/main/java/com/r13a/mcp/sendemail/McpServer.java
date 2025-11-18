@@ -14,11 +14,22 @@ import io.helidon.extensions.mcp.server.McpToolContents;
 @Mcp.Server("mcp-send-email")
 class McpServer {
 
+    /**
+     * Simple tool to send an email.
+     * @param from From email address
+     * @param to To email addresses
+     * @param subject Email subject
+     * @param body Email body
+     * @return Informative message that the email was sent
+     */
     @Mcp.Tool("Sends an email.")
-    List<McpToolContent> sendEmail(@Mcp.Description("From email address") String from,
+    List<McpToolContent> sendEmail(
+            @Mcp.Description("From email address") String from,
             @Mcp.Description("To email addresses") String to,
             @Mcp.Description("Email subject") String subject,
-            @Mcp.Description("Email body") String body) {
+            @Mcp.Description("Email body") String body
+        ) 
+    {
 
         if (from.isEmpty() || to.isEmpty() || subject.isEmpty() || body.isEmpty()) {
             throw new McpException("Missing required arguments from, to, subject or body");
@@ -32,6 +43,14 @@ class McpServer {
         return List.of(McpToolContents.textContent("Message sent!"));
     }
 
+    /**
+     * MCP Prompt to send an email given from and to email addresses, subject, and content (body)
+     * @param from From email address
+     * @param to To email addresses
+     * @param subject Email subject
+     * @param body Email body
+     * @return Prompt content
+     */
     @Mcp.Prompt("Prompt to send an email given from and to email addresses, subject, and content (body)")
     List<McpPromptContent> sendEmailPrompt(@Mcp.Description("From email address") String from,
             @Mcp.Description("To email addresses") String to,
